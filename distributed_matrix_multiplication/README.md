@@ -114,6 +114,12 @@ int main() {
     return 0;
 }
 ```
+***Compile and run:***
+```
+gcc -o matrix_multiplication matrix_multiplication.c
+./matrix_multiplication
+```
+
 
 ### Distributed Implementation
 ```
@@ -205,6 +211,12 @@ int main(int argc, char **argv) {
     return 0;
 }
 ```
+***Compile and run:***
+```
+mpicc -o distributed_matrix_multiplication distributed_matrix_multiplication.c
+mpirun -np 4 ./distributed_matrix_multiplication
+```
+
 ## Performance Metrics
 
 ### Measuring Execution Time
@@ -220,6 +232,22 @@ int main(int argc, char **argv) {
     ```
 ### Benchmarking
   - Compare the execution times of the serial and distributed implementations to evaluate performance gains.
+
+## Results
+### Output
+
+### Serial Implementation
+```
+Elapsed time: 3.692057 seconds
+```
+### Distributed Implementation
+```
+    - Elapsed time: 1.143298 seconds
+    - with 2 processes Elapsed time: 1.843325 seconds
+    - with 4 processes Elapsed time: 1.182401 seconds
+    - with 8 processes Elapsed time: 0.913993 seconds
+
+```
 
 ### Performance Gains
   - The distributed implementation shows a significant reduction in elapsed time compared to the serial implementation, demonstrating the performance gains achieved through parallel computation
